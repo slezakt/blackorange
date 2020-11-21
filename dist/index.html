@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Tomas Slezak - www.tomasslezak.cz">
+        <title>BlackOrange</title>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer=""></script>
+        <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+        <script nomodule="" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer=""></script>
+        <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div class="h-screen overflow-hidden relative">
+		<div class="overlay"></div>
+		<div class="js-slider">
+			<div class="w-full h-screen slide slide-car current"></div>
+			<div class="w-full h-screen slide slide-wedding"></div>
+		</div>
+		<div class="container mx-auto relative z-20 flex items-center justify-between pt-8 mb-16">
+	<div>
+		<img src="/img/logo.png" alt="">
+	</div>
+	<nav class="text-lg">
+		<ul class="flex">
+			<li class="ml-20"><a href="/" class="hover:text-gray-500">Domů</a></li>
+			<li class="ml-20"><a href="/onas" class="hover:text-gray-500">O nás</a></li>
+			<li class="ml-20"><a href="/galerie" class="hover:text-gray-500">Galerie</a></li>
+			<li class="ml-20"><a href="/rezervovat" class="hover:text-gray-500">Rezervovat</a></li>
+		</ul>
+	</nav>
+</div>
+
+		<div class="container mx-auto relative z-20">
+			<div class="text-right">
+				<h1 class="text-3xl">úvodní nadpis</h1>
+				Nějaké úvodní texty
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+		const slides = document.querySelectorAll('.slide');
+		const intervalTime = 5000;
+		let slideInterval;
+
+		const nextSlide = () => {
+			const current = document.querySelector('.current');
+			current.classList.remove('current');
+			if (current.nextElementSibling) {
+				current.nextElementSibling.classList.add('current');
+			} else {
+				slides[0].classList.add('current');
+			}
+			setTimeout(() => current.classList.remove('current'));
+		}
+
+		slideInterval = setInterval(nextSlide, intervalTime);
+
+	</script>
+
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<module href="./src/html/modules/head.html">
+</module>
+<body>
+	<div class="h-screen overflow-hidden relative">
+		<div class="overlay"></div>
+		<div class="js-slider">
+			<div class="w-full h-screen slide slide-car current"></div>
+			<div class="w-full h-screen slide slide-wedding"></div>
+		</div>
+		<module href="./src/html/modules/header.html">
+		</module>
+
+		<div class="container mx-auto relative z-20">
+			<div class="text-right">
+				<h1 class="text-3xl">úvodní nadpis</h1>
+				Nějaké úvodní texty
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+		const slides = document.querySelectorAll('.slide');
+		const intervalTime = 5000;
+		let slideInterval;
+
+		const nextSlide = () => {
+			const current = document.querySelector('.current');
+			current.classList.remove('current');
+			if (current.nextElementSibling) {
+				current.nextElementSibling.classList.add('current');
+			} else {
+				slides[0].classList.add('current');
+			}
+			setTimeout(() => current.classList.remove('current'));
+		}
+
+		slideInterval = setInterval(nextSlide, intervalTime);
+
+	</script>
+
+</body>

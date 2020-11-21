@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Tomas Slezak - www.tomasslezak.cz">
+        <title>BlackOrange</title>
+        <link rel="stylesheet" href="/css/main.css">
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer=""></script>
+        <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+        <script nomodule="" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer=""></script>
+        <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+	<div class="container mx-auto relative z-20 flex items-center justify-between pt-8 mb-16">
+	<div>
+		<img src="/img/logo.png" alt="">
+	</div>
+	<nav class="text-lg">
+		<ul class="flex">
+			<li class="ml-20"><a href="/" class="hover:text-gray-500">Domů</a></li>
+			<li class="ml-20"><a href="/onas" class="hover:text-gray-500">O nás</a></li>
+			<li class="ml-20"><a href="/galerie" class="hover:text-gray-500">Galerie</a></li>
+			<li class="ml-20"><a href="/rezervovat" class="hover:text-gray-500">Rezervovat</a></li>
+		</ul>
+	</nav>
+</div>
+
+	<div class="container mx-auto relative z-20">
+		<div class="text-right">
+			<h1 class=" text-3xl">Rezervovat</h1>
+			<form name="rezervace" method="POST" data-netlify="true">
+				<p>
+					<label>Vaše jméno: <input type="text" name="name"></label>
+				</p>
+				<p>
+					<label>Váš Email: <input type="email" name="email"></label>
+				</p>
+				<p>
+					<label>Zpráva: <textarea name="message"></textarea></label>
+				</p>
+				<p>
+					<button type="submit">Odeslat</button>
+				</p>
+			</form>
+		</div>
+	</div>
+	
+
+</body></html>

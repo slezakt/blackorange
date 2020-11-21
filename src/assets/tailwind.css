@@ -1,0 +1,31 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.slide {
+  @apply bg-no-repeat bg-cover bg-center opacity-0 top-0 left-0 absolute transition-opacity ease-in-out duration-500;
+}
+
+.current {
+  @apply opacity-100;
+}
+
+.slide-wedding {
+  background-image: url(../img/wedding.jpg);
+}
+
+.slide-car {
+  background-image: url(../img/car.jpg);
+}
+
+.overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  @apply absolute top-0 left-0 w-full h-full z-10;
+}
