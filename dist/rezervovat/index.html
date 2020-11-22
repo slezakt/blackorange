@@ -15,37 +15,40 @@
         <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
 </head>
 
-<body>
+<body x-data="{ 'link': 'rezervovat' }">
 
 	<div class="container mx-auto relative z-20 flex items-center justify-between pt-8 mb-16">
 	<div>
-		<img src="/img/logo.png" alt="">
+		<a href="/">
+			<img src="/img/logo.png" alt="">
+		</a>
 	</div>
 	<nav class="text-lg">
 		<ul class="flex">
-			<li class="ml-20"><a href="/" class="hover:text-gray-500">Domů</a></li>
-			<li class="ml-20"><a href="/onas" class="hover:text-gray-500">O nás</a></li>
-			<li class="ml-20"><a href="/galerie" class="hover:text-gray-500">Galerie</a></li>
-			<li class="ml-20"><a href="/rezervovat" class="hover:text-gray-500">Rezervovat</a></li>
+			<li class="ml-20"><a href="/" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'home' }">Domů</a></li>
+			<li class="ml-20"><a href="/onas" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'onas' }">O nás</a></li>
+			<li class="ml-20"><a href="/galerie" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'galerie' }">Galerie</a></li>
+			<li class="ml-20"><a href="/rezervovat" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'rezervovat' }">Rezervovat</a></li>
 		</ul>
 	</nav>
 </div>
 
 	<div class="container mx-auto relative z-20">
-		<div class="text-right">
-			<h1 class=" text-3xl">Rezervovat</h1>
-			<form name="rezervace" method="POST" data-netlify="true">
+		<div class="text-center">
+
+			<h1 class=" text-3xl mb-10">Rezervovat</h1>
+			<form name="rezervace" method="POST" data-netlify-recaptcha="true" data-netlify="true" class="max-w-screen-sm mx-auto">
 				<p>
-					<label>Vaše jméno: <input type="text" name="name"></label>
+					<label class="block mb-4">Vaše jméno: <input type="text" name="name" class="block mx-auto border border-solid border-gray-400 p-2 mb-4 w-full rounded"></label>
 				</p>
 				<p>
-					<label>Váš Email: <input type="email" name="email"></label>
+					<label class="block mb-4">Váš Email: <input type="email" name="email" class="block mx-auto border border-solid border-gray-400 p-2 mb-4 w-full rounded"></label>
 				</p>
 				<p>
-					<label>Zpráva: <textarea name="message"></textarea></label>
+					<label class="block mb-4">Zpráva: <textarea name="message" class="block mx-auto border border-solid border-gray-400 p-2 mb-4 w-full rounded"></textarea></label>
 				</p>
 				<p>
-					<button type="submit">Odeslat</button>
+					<button type="submit" class="bg-yellow-700 text-white py-4 px-8 rounded uppercase transition-all duration-200 hover:bg-yellow-800">Odeslat</button>
 				</p>
 			</form>
 		</div>

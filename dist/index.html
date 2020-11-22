@@ -14,7 +14,7 @@
         <link rel="shortcut icon" href="ico/favicon.ico" type="image/x-icon">
         <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body x-data="{ 'link': 'home' }">
 	<div class="h-screen overflow-hidden relative">
 		<div class="overlay"></div>
 		<div class="js-slider">
@@ -23,14 +23,16 @@
 		</div>
 		<div class="container mx-auto relative z-20 flex items-center justify-between pt-8 mb-16">
 	<div>
-		<img src="/img/logo.png" alt="">
+		<a href="/">
+			<img src="/img/logo.png" alt="">
+		</a>
 	</div>
 	<nav class="text-lg">
 		<ul class="flex">
-			<li class="ml-20"><a href="/" class="hover:text-gray-500">Domů</a></li>
-			<li class="ml-20"><a href="/onas" class="hover:text-gray-500">O nás</a></li>
-			<li class="ml-20"><a href="/galerie" class="hover:text-gray-500">Galerie</a></li>
-			<li class="ml-20"><a href="/rezervovat" class="hover:text-gray-500">Rezervovat</a></li>
+			<li class="ml-20"><a href="/" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'home' }">Domů</a></li>
+			<li class="ml-20"><a href="/onas" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'onas' }">O nás</a></li>
+			<li class="ml-20"><a href="/galerie" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'galerie' }">Galerie</a></li>
+			<li class="ml-20"><a href="/rezervovat" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'rezervovat' }">Rezervovat</a></li>
 		</ul>
 	</nav>
 </div>

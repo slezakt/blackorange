@@ -3,26 +3,27 @@
 <module href="./src/html/modules/head.html">
 </module>
 
-<body>
+<body x-data="{ 'link': 'rezervovat' }">
 
 	<module href="./src/html/modules/header.html">
 	</module>
 
 	<div class="container mx-auto relative z-20">
-		<div class="text-right">
-			<h1 class=" text-3xl">Rezervovat</h1>
-			<form name="rezervace" method="POST" data-netlify="true">
+		<div class="text-center">
+
+			<h1 class=" text-3xl mb-10">Rezervovat</h1>
+			<form name="rezervace" method="POST" data-netlify-recaptcha="true" data-netlify="true" class="max-w-screen-sm mx-auto">
 				<p>
-					<label>Vaše jméno: <input type="text" name="name" /></label>
+					<label class="block mb-4">Vaše jméno: <input type="text" name="name" class="block mx-auto border border-solid border-gray-400 p-2 mb-4 w-full rounded" /></label>
 				</p>
 				<p>
-					<label>Váš Email: <input type="email" name="email" /></label>
+					<label class="block mb-4">Váš Email: <input type="email" name="email" class="block mx-auto border border-solid border-gray-400 p-2 mb-4 w-full rounded"/></label>
 				</p>
 				<p>
-					<label>Zpráva: <textarea name="message"></textarea></label>
+					<label class="block mb-4">Zpráva: <textarea name="message" class="block mx-auto border border-solid border-gray-400 p-2 mb-4 w-full rounded"></textarea></label>
 				</p>
 				<p>
-					<button type="submit">Odeslat</button>
+					<button type="submit" class="bg-yellow-700 text-white py-4 px-8 rounded uppercase transition-all duration-200 hover:bg-yellow-800">Odeslat</button>
 				</p>
 			</form>
 		</div>
