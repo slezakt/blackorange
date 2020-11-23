@@ -3,7 +3,7 @@
 <module href="./src/html/modules/head.html">
 </module>
 
-<body x-data="{ 'link': 'rezervovat' }">
+<body x-data="{ mobileNav: false, 'link': 'rezervovat' }">
 
 	<module href="./src/html/modules/header.html">
 	</module>
@@ -22,7 +22,7 @@
 				<p>
 					<label class="block mb-4">Zpráva: <textarea name="message" class="block mx-auto border border-solid border-gray-400 p-2 mb-4 w-full rounded"></textarea></label>
 				</p>
-				<div data-netlify-recaptcha="true" class="mx-auto"></div>
+				<div data-netlify-recaptcha="true" class="flex justify-center"></div>
 				<p>
 					<button type="submit" class="bg-yellow-700 text-white py-4 px-8 rounded uppercase transition-all duration-200 hover:bg-yellow-800">Odeslat</button>
 				</p>

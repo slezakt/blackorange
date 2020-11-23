@@ -33,6 +33,9 @@ module.exports = {
       fontFamily: {
         "Roboto Condensed": ['"Roboto Condensed"', "sans-serif"],
       },
+      inset: {
+        '6': '1.5rem',
+      }
     },
   },
   variants: {},

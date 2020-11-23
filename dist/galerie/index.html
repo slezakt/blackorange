@@ -15,20 +15,26 @@
         <link rel="icon" href="ico/favicon.ico" type="image/x-icon">
 </head>
 
-<body x-data="{ 'link': 'galerie' }">
+<body x-data="{ mobileNav: false, 'link': 'galerie' }">
 
-	<div class="container mx-auto relative z-20 flex items-center justify-between pt-8 mb-16">
-	<div>
+	<div class="container mx-auto relative z-30 lg:flex items-center justify-between pt-4 lg:pt-8 mb-16">
+	<div class="pl-4">
 		<a href="/">
-			<img src="/img/logo.png" alt="">
+			<img src="/img/logo.png" alt="" class="w-40 inline-block lg:w-auto">
 		</a>
 	</div>
-	<nav class="text-lg">
-		<ul class="flex">
-			<li class="ml-20"><a href="/" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'home' }">Domů</a></li>
-			<li class="ml-20"><a href="/onas" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'onas' }">O nás</a></li>
-			<li class="ml-20"><a href="/galerie" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'galerie' }">Galerie</a></li>
-			<li class="ml-20"><a href="/rezervovat" class="hover:text-gray-500" :class="{ 'text-yellow-700 font-bold' : link === 'rezervovat' }">Rezervovat</a></li>
+	<button type="button" aria-label="Menu" @click="mobileNav = true" class="lg:hidden">
+		<img src="/img/menu.svg" alt="" class="absolute w-6 top-6 right-6">
+	</button>
+	<nav class="text-lg bg-black fixed flex justify-center items-center w-full h-screen top-0 left-0 lg:block-important lg:bg-transparent lg:static lg:w-auto md:h-auto" x-show="mobileNav">
+		<button type="button" @click="mobileNav = false" class="lg:hidden">
+			<img src="/img/close.svg" alt="" class="w-6 absolute top-6 right-6">
+		</button>
+		<ul class="text-center lg:flex">
+			<li class="lg:ml-20"><a href="/" class="hover:text-gray-500 text-white block p-4 lg:text-black" :class="{ 'text-yellow-700 font-bold' : link === 'home' }">Domů</a></li>
+			<li class="lg:ml-20"><a href="/onas" class="hover:text-gray-500 text-white block p-4 lg:text-black" :class="{ 'text-yellow-700 font-bold' : link === 'onas' }">O nás</a></li>
+			<li class="lg:ml-20"><a href="/galerie" class="hover:text-gray-500 text-white block p-4 lg:text-black" :class="{ 'text-yellow-700 font-bold' : link === 'galerie' }">Galerie</a></li>
+			<li class="lg:ml-20"><a href="/rezervovat" class="hover:text-gray-500 text-white block p-4 lg:text-black" :class="{ 'text-yellow-700 font-bold' : link === 'rezervovat' }">Rezervovat</a></li>
 		</ul>
 	</nav>
 </div>

@@ -2,20 +2,21 @@
 <html lang="en">
 <module href="./src/html/modules/head.html">
 </module>
-<body x-data="{ 'link': 'home' }">
+<body x-data="{ mobileNav: false, 'link': 'home' }">
 	<div class="h-screen overflow-hidden relative">
 		<div class="overlay"></div>
 		<div class="js-slider">
 			<div class="w-full h-screen slide slide-car current">
 				<picture>
 					<source srcset="./img/webp/car.webp">
-						<img src="./img/car.jpg" alt="" class="object-cover max-w-none w-full h-full">
+						<img src="./img/car.jpg" width="640" height="360" alt="" class="object-cover max-w-none w-full h-full">
 				</picture>
 			</div>
+
 			<div class="w-full h-screen slide slide-wedding">
 				<picture>
 					<source srcset="./img/webp/wedding.webp">
-					<img src="./img/wedding.jpg" alt="" class="object-cover max-w-none w-full h-full">
+					<img src="./img/wedding.jpg" width="640" height="360" alt="" class="object-cover max-w-none w-full h-full">
 				</picture>
 			</div>
 		</div>
