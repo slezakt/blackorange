@@ -9,12 +9,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: "#a9c23a",
-        blue: {
-          100: "#80E6FF",
-          200: "#0CF",
-          300: "#08c",
-          400: "#005580",
+        brown:
+        {
+          600: "#4a3f35",
+          900: "#2f2519"
+        },
+        orange: {
+          700: "#fa7d09",
+          800: "#db6400",
         },
       },
       padding: (theme) => ({
