@@ -10,7 +10,9 @@
     "css:watch": "postcss ./src/assets/tailwind.css -o ./dist/css/main.css --watch",
     "dev:server": "browser-sync start --server --ss './dist/' --files ['./src/html/pages/**/*.html', './src/assets/tailwind.css'] --no-notify --no-open",
     "watch": "run-p html:watch css:watch dev:server",
-    "build": "run-p html:process css:build"
+    "build": "node ./tools/image-optimizer.js && node ./tools/webp-converter.js && run-p html:process css:build",
+    "optimize": "node ./tools/image-optimizer.js",
+    "webp": "node ./tools/webp-converter.js"
   },
   "posthtml": {
     "plugins": {
@@ -28,6 +30,10 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^9.0.0",
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "imagemin-webp": "^6.0.0",
     "npm-watch": "^0.7.0",
     "postcss": "^8.1.4",
     "postcss-cli": "^8.2.0",

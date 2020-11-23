@@ -12,14 +12,6 @@
   @apply opacity-100;
 }
 
-.slide-wedding {
-  background-image: url(../img/wedding.jpg);
-}
-
-.slide-car {
-  background-image: url(../img/car.jpg);
-}
-
 .overlay {
   background: linear-gradient(
     to bottom,
